@@ -1,0 +1,56 @@
+{% extends 'sentiment/base.html' %}
+
+{% block title %}Sentiment Analysis - AI Powered Insights{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Sentiment Analysis with AI</h1>
+    <p>Discover the emotions behind text. Analyze sentiments in real-time with AI-powered insights.</p>
+    <a href="{% url 'analyze_sentiment' %}" class="btn btn-primary btn-animated mt-3">Analyze Now</a>
+</section>
+
+<!-- Features Section -->
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+            <h3>AI-Powered Analysis</h3>
+            <p>Leverage machine learning to detect emotions and sentiments in text.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+            <h3>Real-Time Results</h3>
+            <p>Get instant feedback on the sentiment of any given text.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-users fa-3x text-danger mb-3"></i>
+            <h3>User-Friendly Interface</h3>
+            <p>Simple and intuitive design makes analysis accessible to everyone.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">What Our Users Say</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-lg border-0">
+                <p>"This tool helped us analyze customer feedback effectively. Highly recommended!"</p>
+                <h5>- Jane Doe, Marketing Analyst</h5>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-4 shadow-lg border-0">
+                <p>"The sentiment analysis API is incredibly accurate and useful for social media monitoring."</p>
+                <h5>- John Smith, Data Scientist</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="text-center mt-5">
+    <a href="{% url 'analyze_sentiment' %}" class="btn btn-primary btn-animated">Try Sentiment Analysis Now</a>
+</div>
+{% endblock %}

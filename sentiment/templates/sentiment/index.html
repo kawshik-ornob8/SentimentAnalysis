@@ -1,0 +1,97 @@
+{% extends 'sentiment/base.html' %}
+
+{% block title %}Sentiment Analysis{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2 class="mb-4 title">Enter a Comment for Sentiment Analysis</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <textarea name="comment" class="form-control comment-box" rows="4" placeholder="Type a comment..."></textarea>
+            </div>
+            <button type="submit" class="btn analyze-btn">Analyze</button>
+        </form>
+
+        {% if sentiment %}
+            <div class="alert alert-info sentiment-result">
+                <strong>Predicted Sentiment:</strong> {{ sentiment }}
+            </div>
+        {% endif %}
+    </div>
+
+    <style>
+        /* Title Styling */
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #343a40;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* Comment Box */
+        .comment-box {
+            width: 60%;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            border: 2px solid #007bff;
+            padding: 12px;
+            font-size: 16px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .comment-box:focus {
+            outline: none;
+            border-color: #ff4081;
+            box-shadow: 0px 4px 15px rgba(255, 64, 129, 0.4);
+        }
+
+        /* Analyze Button */
+        .analyze-btn {
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .analyze-btn:hover {
+            background: linear-gradient(135deg, #00d4ff, #007bff);
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Sentiment Result */
+        .sentiment-result {
+            width: 60%;
+            margin: 30px auto;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out;
+            padding: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+{% endblock %}
