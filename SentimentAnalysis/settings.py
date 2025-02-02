@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-vsi+2s=45ze4&-4nnv%7$v&v^b=%d*dv9c6@_bs%va889395)*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
-
+ALLOWED_HOSTS = ['SentimentAnalysis.onrender.com']
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
